@@ -11,6 +11,6 @@ while IFS= read -r repo; do
     echo ""
     echo "$repo:"
     git fetch --all
-    git reset --hard HEAD
+    git reset --hard @{u}
     cd ..
 done <<< "$repos"
