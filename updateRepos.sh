@@ -8,7 +8,9 @@ repos="$(find -maxdepth 1 -type d | sed -n '1!p')"
 
 while IFS= read -r repo; do
     cd "$repo"
+    echo ""
+    echo "$repo:"
     git fetch --all
-    git reset --hard origin/master
+    git reset --hard HEAD
     cd ..
 done <<< "$repos"
