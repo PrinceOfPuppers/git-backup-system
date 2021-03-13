@@ -6,6 +6,11 @@ for element in json.load(sys.stdin):
     print(element['full_name'])
 "
 
+if [ "$1" == "" ]; then
+    printf 'GitHub Username Required\n'
+    exit
+fi 
+
 # ensure user wants to clone
 printf 'Clone All Public Repos for '$1' (y/n): '
 read answer
